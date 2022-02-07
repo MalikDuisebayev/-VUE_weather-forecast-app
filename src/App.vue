@@ -1,30 +1,62 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="app">
+    <navbar/>
+    <div class="home__content">
+      <div class="container">
+        <header-component />
+      </div>
+    </div>
+
   </div>
-  <router-view/>
 </template>
 
+<script>
+import navbar from './components/UI/navbar.vue'
+import HeaderComponent from './components/HeaderComponent.vue'
+export default {
+  components: {navbar, HeaderComponent},
+
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Questrial', sans-serif;
+  }
+  body{
+   position: relative;
+   min-height: 100vh; 
+   width: 100%;
+   overflow: hidden;
+  }
+  
+  
+  ul{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .home__content{
+    position: absolute;
+    left: 78px;
+    height: 100%;
+    width: calc(100% - 78px);
+    padding: 15px 20px;
+    transition: all .5 ease;
+  }
+  .sidebar.active ~ .home__content{
+    width: calc(100% - 240px);
+    left: 240px;
+    transition: all .5s ease;
+  }
+  .container{
+    width: 100%;
+    border: 1px solid black;
+  }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
