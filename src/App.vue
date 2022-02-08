@@ -3,7 +3,7 @@
     <navbar/>
     <div class="home__content">
       <div class="container">
-        <header-component />
+        <router-view></router-view>
       </div>
     </div>
 
@@ -47,7 +47,7 @@ export default {
     height: 100%;
     width: calc(100% - 78px);
     padding: 15px 20px;
-    transition: all .5 ease;
+    transition: all .5s ease;
   }
   .sidebar.active ~ .home__content{
     width: calc(100% - 240px);
@@ -56,7 +56,7 @@ export default {
   }
   .container{
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
 
 </style>

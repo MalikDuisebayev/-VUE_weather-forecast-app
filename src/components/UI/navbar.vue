@@ -16,10 +16,12 @@
           <span class="tooltip">Search</span>
       </li>
       <li v-for="(navList,idx) in navLists" :key = "idx">
-        <a href="#">
+        <router-link :to="navList.path">
+          
           <i :class='navList.icon' ></i>
           <span class="links__name" :class="sidebarSeen === true ? 'active' : ''">{{navList.link}}</span>
-        </a>
+        
+        </router-link>
           <span class="tooltip">{{navList.link}}</span>
       </li>
     </ul>
@@ -43,14 +45,14 @@ export default {
   data() {
     return {
       navLists: [
-        {link: 'Dashboard', path: '', icon: 'bx bx-grid-alt'},
-        {link: 'Users', path: '', icon: 'bx bx-user'},
-        {link: 'Messages', path: '', icon: 'bx bx-chat'},
-        {link: 'Analytics', path: '', icon: 'bx bx-pie-chart-alt'},
-        {link: 'File Manager', path: '', icon: 'bx bx-folder'},
-        {link: 'Order', path: '', icon: 'bx bx-cart'},
-        {link: 'Saved', path: '', icon: 'bx bx-heart'},
-        {link: 'Setting', path: '', icon: 'bx bx-cog'},
+        {link: 'Notes', path: '/notes', icon: 'bx bx-edit'},
+        {link: 'Users', path: '/users', icon: 'bx bx-user'},
+        {link: 'Messages', path: '/messages', icon: 'bx bx-chat'},
+        {link: 'Analytics', path: '/analytics', icon: 'bx bx-pie-chart-alt'},
+        {link: 'File Manager', path: '/filemanager', icon: 'bx bx-folder'},
+        {link: 'Order', path: '/order', icon: 'bx bx-cart'},
+        {link: 'Saved', path: '/saved', icon: 'bx bx-heart'},
+        {link: 'Setting', path: '/setting', icon: 'bx bx-cog'},
       ],
       sidebarSeen : false    
     }

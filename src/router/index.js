@@ -1,22 +1,28 @@
-// import { createRouter, createWebHistory } from 'vue-router'
-// // import HeaderComponent from '../components/HeaderComponent.vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import HeaderComponent from '../components/HeaderComponent.vue'
 
-// const routes = [
-//   {
-//     path: '/',
-//     name: 'Home',
-//     // component: HeaderComponent
-//   },
-//   {
-//     path: '/main',
-//     name: 'About',
-//     component: () => import(/* webpackChunkName: "about" */ '../components/MainComponent.vue')
-//   }
-// ]
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HeaderComponent
+  },
+  {
+    path: '/notes',
+    name: 'notes',
+    component: () => import('../components/NotesComponent.vue')
+  },
+  {
+    path: '/setting',
+    name: 'setting',
+    component: () => import('../components/SettingComponent.vue')
+  },
+  
+]
 
-// const router = createRouter({
-//   history: createWebHistory(process.env.BASE_URL),
-//   routes
-// })
+const router = createRouter({
+  history: createWebHistory(process.env.BASE_URL),
+  routes
+})
 
-// export default router
+export default router
