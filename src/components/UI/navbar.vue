@@ -45,9 +45,9 @@ export default {
   data() {
     return {
       navLists: [
+        {link: 'Home', path: '/', icon: 'bx bx-home-alt'},
         {link: 'Notes', path: '/notes', icon: 'bx bx-edit'},
-        {link: 'Users', path: '/users', icon: 'bx bx-user'},
-        {link: 'Messages', path: '/messages', icon: 'bx bx-chat'},
+        {link: 'Messages', path: '/messages', icon: 'bx bx-edit'},
         {link: 'Analytics', path: '/analytics', icon: 'bx bx-pie-chart-alt'},
         {link: 'File Manager', path: '/filemanager', icon: 'bx bx-folder'},
         {link: 'Order', path: '/order', icon: 'bx bx-cart'},

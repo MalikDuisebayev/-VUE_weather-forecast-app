@@ -29,12 +29,8 @@ export default {
   }
   body{
    position: relative;
-   min-height: 100vh; 
    width: 100%;
-   overflow: hidden;
   }
-  
-  
   ul{
     list-style: none;
   }
