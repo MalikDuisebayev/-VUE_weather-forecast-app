@@ -1,16 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HeaderComponent from '../components/HeaderComponent.vue'
+import HomeComponent from '../components/HomeComponent.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HeaderComponent
+    component: HomeComponent
   },
   {
     path: '/notes',
     name: 'notes',
     component: () => import('../components/NotesComponent.vue')
+  },
+  {
+    path: '/weather',
+    name: 'weather',
+    component: () => import('../components/WeatherComponent.vue')
   },
   {
     path: '/setting',

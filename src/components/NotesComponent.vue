@@ -1,23 +1,26 @@
 <template>
-  <div class="notes">
-    <form @submit.prevent>
-      <input type="text" placeholder="Заголовок" v-model.trim="title" />
-      <input type="text" placeholder="Описание" v-model.trim="body" />
-      <my-button @click="createNote">Сохранить</my-button>
-    </form>
-    <div class="notes__list">
-      <div class="notes__item" v-for="note in notes" :key="note.id">
-        <p><strong>Заголовок:</strong> {{ note.title }}</p>
-        <p><strong>Описание:</strong> {{ note.body }}</p>
-        <my-button class="notes__btn" @click="deleteNote(note)"
-          >Удалить</my-button
-        >
-      </div>
-      <div class="notes__length">
-        <p v-if="notes.length">
-          <strong>Количество заметок:</strong> {{ notes.length }}
-        </p>
-        <p v-else><strong>Добавьте свою первую заметку</strong></p>
+  <div class="container">
+    <div class="notes">
+      <form @submit.prevent>
+        <input type="text" placeholder="Заголовок" v-model.trim="title" />
+        <input type="text" placeholder="Описание" v-model.trim="body" />
+        <my-button @click="createNote">Сохранить</my-button>
+      </form>
+      <div class="notes__list">
+        <div class="notes__item" v-for="note in notes" :key="note.id">
+          <p><strong>Заголовок:</strong> {{ note.title }}</p>
+          <p><strong>Описание:</strong> {{ note.body }}</p>
+          <!-- <my-button class="notes__btn" @click="deleteNote(note)"
+            >Удалить</my-button
+          > -->
+          <i class='notes__btn bx bxs-trash' @click="deleteNote(note)" title = "Delete"> </i>
+        </div>
+        <div class="notes__length">
+          <p v-if="notes.length">
+            <strong>Количество заметок:</strong> {{ notes.length }}
+          </p>
+          <p v-else><strong>Добавьте свою первую заметку</strong></p>
+        </div>
       </div>
     </div>
   </div>
@@ -39,8 +42,8 @@ export default {
       if (!this.title || !this.body) {
         return;
       }
-      if(!this.notes.length){
-        this.saveNote()
+      if (!this.notes.length) {
+        this.saveNote();
       }
       this.notes.push({
         title: this.title,
@@ -74,25 +77,6 @@ export default {
 </script>
 
 <style scoped>
-.my{
-  background: black;
-  color: white;
-  padding: 18px 15px;
-}
-.my input{
-  margin-right: 50px;
-}
-.my input[type='checkbox']{
-  border-radius: 50%;
-}
-
-.af{
-  text-decoration: line-through;
-  
-}
-.ad{
-  pointer-events: none;
-}
 .notes {
   max-width: 100%;
 }
@@ -129,11 +113,14 @@ button {
 }
 .notes__btn {
   position: absolute;
-  background-color: darkred;
   top: 50%;
   right: 18px;
   transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 25px;
+  color: darkred;
 }
+
 /* .notes__radio{
   position: absolute;
   top: 50%;

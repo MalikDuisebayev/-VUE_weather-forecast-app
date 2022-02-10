@@ -2,8 +2,8 @@
   <div class="sidebar" :class="sidebarSeen === true ? 'active' : ''">
     <div class="logo__content">
       <div class="logo">
-        <i class='bx bxl-c-plus-plus'></i>
-        <div class="logo__name">Malik</div>
+        
+        <div class="logo__name">Appllication</div>
       </div>
       <i class='bx bx-menu' id="btn" @click="btnClick"></i>
     </div>
@@ -47,7 +47,7 @@ export default {
       navLists: [
         {link: 'Home', path: '/', icon: 'bx bx-home-alt'},
         {link: 'Notes', path: '/notes', icon: 'bx bx-edit'},
-        {link: 'Messages', path: '/messages', icon: 'bx bx-edit'},
+        {link: 'Weather', path: '/weather', icon: 'bx bx-cloud'},
         {link: 'Analytics', path: '/analytics', icon: 'bx bx-pie-chart-alt'},
         {link: 'File Manager', path: '/filemanager', icon: 'bx bx-folder'},
         {link: 'Order', path: '/order', icon: 'bx bx-cart'},

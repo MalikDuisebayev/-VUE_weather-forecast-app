@@ -1,58 +1,61 @@
 <template>
   <div class="app">
-    <navbar/>
+    <navbar />
     <div class="home__content">
-      <div class="container">
-        <router-view></router-view>
-      </div>
+      <router-view :newSetting="newSetting"></router-view>
     </div>
-
   </div>
 </template>
 
 <script>
-import navbar from './components/UI/navbar.vue'
-import HeaderComponent from './components/HeaderComponent.vue'
+import navbar from "./components/UI/navbar.vue";
 export default {
-  components: {navbar, HeaderComponent},
-
-}
+  components: { navbar },
+  data() {
+    return {
+      newSetting: {
+        firstName: "",
+        lastName: "",
+        profession: "",
+        background: "",
+      },
+    };
+  },
+};
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Questrial', sans-serif;
-  }
-  body{
-   position: relative;
-   width: 100%;
-  }
-  ul{
-    list-style: none;
-  }
-  a{
-    text-decoration: none;
-  }
-  .home__content{
-    position: absolute;
-    left: 78px;
-    height: 100%;
-    width: calc(100% - 78px);
-    padding: 15px 20px;
-    transition: all .5s ease;
-  }
-  .sidebar.active ~ .home__content{
-    width: calc(100% - 240px);
-    left: 240px;
-    transition: all .5s ease;
-  }
-  .container{
-    width: 100%;
-    /* border: 1px solid black; */
-  }
-
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+}
+body {
+  position: relative;
+  width: 100%;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.home__content {
+  position: absolute;
+  left: 78px;
+  height: 100%;
+  width: calc(100% - 78px);
+  transition: all 0.5s ease;
+}
+.container {
+  padding: 15px 20px;
+  width: 100%;
+}
+.sidebar.active ~ .home__content {
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+}
 </style>
